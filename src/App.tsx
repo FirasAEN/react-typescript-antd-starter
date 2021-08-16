@@ -1,57 +1,70 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import {Counter} from './components/counter/Counter';
 import './App.css';
+import "antd/dist/antd.css";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Breadcrumb, Button, DatePicker, Result} from "antd";
+import {Header} from "./ui/header/Header";
+import {AppPath, AppRoutes} from "./routes.config";
 
 function App() {
+	function renderPage(path: AppPath): JSX.Element {
+		switch (path) {
+			case AppPath.About:
+				return (
+					<div className="About">
+						<DatePicker />
+						<Button type="primary" style={{ marginLeft: 8 }}>
+							Primary Button
+						</Button>
+					</div>
+				);
+			case AppPath.Users:
+				return (<>User Page</>);
+			case AppPath.Counter:
+				return (<Counter />);
+			case AppPath.Home:
+				return (
+					<div>
+						<Breadcrumb>
+							<Breadcrumb.Item>Home</Breadcrumb.Item>
+							<Breadcrumb.Item>
+								<a href="">Application Center</a>
+							</Breadcrumb.Item>
+							<Breadcrumb.Item>
+								<a href="">Application List</a>
+							</Breadcrumb.Item>
+							<Breadcrumb.Item>An Application</Breadcrumb.Item>
+						</Breadcrumb>
+					</div>
+				);
+			default:
+				return <>
+					<Result
+						status="404"
+						title="404"
+						subTitle="Sorry, the page you visited does not exist."
+						extra={<Button type="primary">Back Home</Button>}
+					/>,
+				</>;
+		}
+	}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+		<Router>
+			<Header></Header>
+			<Switch>
+				<>
+					{
+						AppRoutes.map(route => (
+							<Route exact key={route.id} path={route.path}>
+								{renderPage(route.path)}
+							</Route>
+						))
+					}
+				</>
+			</Switch>
+		</Router>
   );
 }
 

@@ -1,0 +1,17 @@
+.header {
+	display: block;
+	background-color: hsl(0, 2%, 68%);
+}
+
+.header_nav {
+	display: block;
+}
+
+.header_entries {
+	display: flex;
+	list-style-type: none;
+}
+
+.header_entry {
+	margin: 1.2em;
+}
