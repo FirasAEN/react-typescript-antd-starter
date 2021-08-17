@@ -3,29 +3,19 @@
 	background-color: hsl(0, 0%, 95%);
 }
 
-.header_logo {
-	height: 4em;
-	pointer-events: none;
-	margin: 0 12px 0 0;
-}
-
 .header_nav {
 	display: flex;
 	align-items: center;
 }
 
+.header_logo {
+	height: 4em;
+	pointer-events: none;
+	margin: 0 12px 0 12px;
+}
+
+
 .header_entries {
 	display: flex;
 	list-style-type: none;
-}
-
-.header_entry {
-	font-size: 1.5em;
-	display: flex;
-	align-items: center;
-	margin: 1em;
-
-	&_icon {
-		margin-right: 0.35em;
-	}
 }

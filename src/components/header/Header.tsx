@@ -5,25 +5,26 @@ import {
 	CalculatorOutlined,
 	SettingFilled,
 } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 import { AppPath, AppRoutes } from '../../app/routes.config';
 import logo from '../../img/logo.svg';
+import AppLink from '../../ui/app-icon/App-Link';
 import styles from './Header.module.scss';
 
 export const Header = (): JSX.Element => {
-	function renderIconFragment(path: AppPath): JSX.Element {
+	function renderIconFragment(path: AppPath): React.ComponentType<any> {
 		switch (path) {
 			case AppPath.About:
-				return <RadarChartOutlined />;
+				return RadarChartOutlined;
 			case AppPath.Users:
-				return <UserOutlined />;
+				return UserOutlined;
 			case AppPath.Counter:
-				return <CalculatorOutlined />;
+				return CalculatorOutlined;
 			case AppPath.Home:
-				return <HomeOutlined />;
+				return HomeOutlined;
 			default:
-				return <SettingFilled />;
+				return SettingFilled;
 		}
 	}
 
@@ -32,16 +33,14 @@ export const Header = (): JSX.Element => {
 			<nav className={styles.header_nav}>
 				<img src={logo} className={styles.header_logo} alt="logo" />
 				<div className={styles.header_entries}>
-					<>
-						{AppRoutes.map((route) => (
-							<div key={route.id} className={styles.header_entry}>
-								<div className={styles.header_entry_icon}>
-									{renderIconFragment(route.path)}
-								</div>
-								<Link to={route.path}>{route.content}</Link>
-							</div>
-						))}
-					</>
+					{AppRoutes.map((route) => (
+						<AppLink
+							key={route.id}
+							route={route.path}
+							title={route.name}
+							iconComponent={renderIconFragment(route.path)}
+						/>
+					))}
 				</div>
 			</nav>
 		</div>

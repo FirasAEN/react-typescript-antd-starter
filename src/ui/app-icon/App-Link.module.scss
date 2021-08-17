@@ -1,0 +1,10 @@
+.app_link {
+	font-size: 1.5em;
+	display: flex;
+	align-items: center;
+	margin: 1em;
+
+	&_icon {
+		margin-right: 0.35em;
+	}
+}

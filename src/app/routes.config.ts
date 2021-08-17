@@ -17,7 +17,7 @@ export enum AppPath {
 export interface IRoute {
 	id: string;
 	path: AppPath;
-	content: string;
+	name: string;
 	component?: React.ComponentType<any>;
 	subRoutes?: Array<IRoute>;
 }
@@ -27,30 +27,30 @@ export const AppRoutes: Array<IRoute> = [
 		id: 'home-page',
 		path: AppPath.Home,
 		component: Home,
-		content: 'Home',
+		name: 'Home',
 	},
 	{
 		id: 'about-page',
 		path: AppPath.About,
 		component: About,
-		content: 'About',
+		name: 'About',
 	},
 	{
 		id: 'users-page',
 		path: AppPath.Users,
 		component: Users,
-		content: 'Users',
+		name: 'Users',
 	},
 	{
 		id: 'counter-page',
 		path: AppPath.Counter,
 		component: Counter,
-		content: 'Counter',
+		name: 'Counter',
 	},
 	{
 		id: 'error-page',
 		path: AppPath.Error,
 		component: Error,
-		content: 'Error',
+		name: 'Error',
 	},
 ];

@@ -48,7 +48,7 @@ module.exports = {
 		'no-implicit-coercion': 'error',
 		'yoda': 'error',
 		'init-declarations': ['error', 'never', { 'ignoreForLoopInit': true }],
-		'no-use-before-define': ['error', { 'functions': false, 'classes': true, 'variables': false }],
+		'no-use-before-define': ['off', { 'functions': false, 'classes': true, 'variables': false }],
 		'comma-dangle': ['error', 'only-multiline'],
 		'key-spacing': ['error', { 'beforeColon': false , 'afterColon': true }],
 		'max-classes-per-file': ['error', 1],
