@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { AppPath } from '../../app/routes.config';
 import styles from './App-Link.module.scss';
 
 interface IAppLink {
-	route: AppPath;
+	route: string;
 	title: string;
 	iconComponent: React.ComponentType<any>;
 }
