@@ -1,12 +1,12 @@
 import 'antd/dist/antd.css';
-import './App.css';
 
 import { Breadcrumb, Button, DatePicker, Result } from 'antd';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import { Counter } from './components/counter/Counter';
+import { Counter } from '../components/counter/Counter';
+import styles from './App.module.css';
+import { Header } from './header/Header';
 import { AppPath, AppRoutes } from './routes.config';
-import { Header } from './ui/header/Header';
 
 function App(): JSX.Element {
 	function renderPage(path: AppPath): JSX.Element {
@@ -61,7 +61,7 @@ function App(): JSX.Element {
 				<>
 					{AppRoutes.map((route) => (
 						<Route exact key={route.id} path={route.path}>
-							{renderPage(route.path)}
+							<div className={styles.app_content}>{renderPage(route.path)}</div>
 						</Route>
 					))}
 				</>
