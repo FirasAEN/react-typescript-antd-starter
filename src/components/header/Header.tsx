@@ -7,8 +7,8 @@ import {
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
+import { AppPath, AppRoutes } from '../../app/routes.config';
 import logo from '../../img/logo.svg';
-import { AppPath, AppRoutes } from '../routes.config';
 import styles from './Header.module.scss';
 
 export const Header = (): JSX.Element => {

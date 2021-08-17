@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import AppRoute from '../components/app-router/App-Route';
-import { Header } from './header/Header';
+import { Header } from '../components/header/Header';
 import { AppRoutes } from './routes.config';
 
 function App(): JSX.Element {
