@@ -17,26 +17,26 @@ export const AppRoutes: Array<IPath> = [
 	{
 		id: 'home-page',
 		path: AppPath.Home,
-		content: 'Home'
+		content: 'Home',
 	},
 	{
 		id: 'about-page',
 		path: AppPath.About,
-		content: 'About'
+		content: 'About',
 	},
 	{
 		id: 'users-page',
 		path: AppPath.Users,
-		content: 'Users'
+		content: 'Users',
 	},
 	{
 		id: 'counter-page',
 		path: AppPath.Counter,
-		content: 'Counter'
+		content: 'Counter',
 	},
 	{
 		id: 'error-page',
 		path: AppPath.Error,
-		content: 'Error'
+		content: 'Error',
 	},
 ];

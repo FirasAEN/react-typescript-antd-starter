@@ -1,13 +1,13 @@
 import React from 'react';
-import {Counter} from './components/counter/Counter';
+import { Counter } from './components/counter/Counter';
 import './App.css';
-import "antd/dist/antd.css";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {Breadcrumb, Button, DatePicker, Result} from "antd";
-import {Header} from "./ui/header/Header";
-import {AppPath, AppRoutes} from "./routes.config";
+import 'antd/dist/antd.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Breadcrumb, Button, DatePicker, Result } from 'antd';
+import { Header } from './ui/header/Header';
+import { AppPath, AppRoutes } from './routes.config';
 
-function App() {
+function App(): JSX.Element {
 	function renderPage(path: AppPath): JSX.Element {
 		switch (path) {
 			case AppPath.About:
@@ -20,9 +20,9 @@ function App() {
 					</div>
 				);
 			case AppPath.Users:
-				return (<>User Page</>);
+				return <>User Page</>;
 			case AppPath.Counter:
-				return (<Counter />);
+				return <Counter />;
 			case AppPath.Home:
 				return (
 					<div>
@@ -39,33 +39,34 @@ function App() {
 					</div>
 				);
 			default:
-				return <>
-					<Result
-						status="404"
-						title="404"
-						subTitle="Sorry, the page you visited does not exist."
-						extra={<Button type="primary">Back Home</Button>}
-					/>,
-				</>;
+				return (
+					<>
+						<Result
+							status="404"
+							title="404"
+							subTitle="Sorry, the page you visited does not exist."
+							extra={<Button type="primary">Back Home</Button>}
+						/>
+						,
+					</>
+				);
 		}
 	}
 
-  return (
+	return (
 		<Router>
-			<Header></Header>
+			<Header />
 			<Switch>
 				<>
-					{
-						AppRoutes.map(route => (
-							<Route exact key={route.id} path={route.path}>
-								{renderPage(route.path)}
-							</Route>
-						))
-					}
+					{AppRoutes.map((route) => (
+						<Route exact key={route.id} path={route.path}>
+							{renderPage(route.path)}
+						</Route>
+					))}
 				</>
 			</Switch>
 		</Router>
-  );
+	);
 }
 
 export default App;
