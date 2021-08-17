@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Users from './pages/Users';
 
 export enum AppPath {
-	Home = '/',
+	Home = '/home',
 	About = '/about',
 	Users = '/users',
 	Counter = '/counter',
