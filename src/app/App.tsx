@@ -4,7 +4,7 @@ import { Breadcrumb, Button, DatePicker, Result } from 'antd';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import { Counter } from '../components/counter/Counter';
-import styles from './App.module.css';
+import styles from './App.module.scss';
 import { Header } from './header/Header';
 import { AppPath, AppRoutes } from './routes.config';
 

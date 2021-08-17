@@ -24,8 +24,8 @@
 	display: flex;
 	align-items: center;
 	margin: 1em;
-}
 
-.header_entry_icon {
-	margin-right: 0.35em;
+	&_icon {
+		margin-right: 0.35em;
+	}
 }

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../img/logo.svg';
 import { AppPath, AppRoutes } from '../routes.config';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 
 export const Header = (): JSX.Element => {
 	function renderIconFragment(path: AppPath): JSX.Element {
