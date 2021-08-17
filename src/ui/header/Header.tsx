@@ -1,7 +1,7 @@
-import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import React from 'react';
+
 import { AppRoutes } from '../../routes.config';
+import styles from './Header.module.css';
 
 export const Header = (): JSX.Element => {
 	return (

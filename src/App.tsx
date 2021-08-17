@@ -1,11 +1,12 @@
-import React from 'react';
-import { Counter } from './components/counter/Counter';
-import './App.css';
 import 'antd/dist/antd.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
+
 import { Breadcrumb, Button, DatePicker, Result } from 'antd';
-import { Header } from './ui/header/Header';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+
+import { Counter } from './components/counter/Counter';
 import { AppPath, AppRoutes } from './routes.config';
+import { Header } from './ui/header/Header';
 
 function App(): JSX.Element {
 	function renderPage(path: AppPath): JSX.Element {
