@@ -1,18 +1,20 @@
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Badge } from 'antd';
+
+import { usePokeRequester } from '../../requesters/poke-requester.hook';
+import styles from './Home.module.scss';
 
 const Home = (): JSX.Element => {
+	const pokemons = usePokeRequester();
+
 	return (
-		<div>
-			<Breadcrumb>
-				<Breadcrumb.Item>Home</Breadcrumb.Item>
-				<Breadcrumb.Item>
-					<a href="">Application Center</a>
-				</Breadcrumb.Item>
-				<Breadcrumb.Item>
-					<a href="">Application List</a>
-				</Breadcrumb.Item>
-				<Breadcrumb.Item>An Application</Breadcrumb.Item>
-			</Breadcrumb>
+		<div className={styles.pokemon_container}>
+			{pokemons
+				? pokemons.results.map((pokemon, idx) => (
+						<Badge className={styles.pokemon} key={idx} count={idx} showZero>
+							{pokemon.name}
+						</Badge>
+				  ))
+				: null}
 		</div>
 	);
 };
