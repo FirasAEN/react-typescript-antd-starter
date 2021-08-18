@@ -9,7 +9,7 @@ import React from 'react';
 
 import { AppPath, AppRoutes } from '../../app/routes.config';
 import logo from '../../img/logo.svg';
-import AppLink from '../../ui/app-icon/App-Link';
+import AppLink from '../../ui/app-link/App-Link';
 import styles from './Header.module.scss';
 
 export const Header = (): JSX.Element => {
