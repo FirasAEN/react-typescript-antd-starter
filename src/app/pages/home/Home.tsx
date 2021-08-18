@@ -1,6 +1,6 @@
 import { Breadcrumb, Badge } from 'antd';
 
-import { usePokeRequester } from '../../requesters/poke-requester.hook';
+import { usePokeRequester } from '../../../requesters/poke-requester.hook';
 import styles from './Home.module.scss';
 
 const Home = (): JSX.Element => {

@@ -3,8 +3,8 @@ import React from 'react';
 import { Counter } from '../components/counter/Counter';
 import About from './pages/About';
 import Error from './pages/Error';
-import Home from './pages/Home';
 import Users from './pages/Users';
+import Home from './pages/home/Home';
 
 export enum AppPath {
 	Home = '/home',
