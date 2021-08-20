@@ -1,5 +1,14 @@
-.pokemon_container {
+.home {
 	display: flex;
+	justify-content: space-between;
+}
+
+.pokemon_container {
+	margin: auto;
+}
+
+.pokemon_fetch__btn {
+	margin-bottom: auto;
 }
 
 .pokemon {

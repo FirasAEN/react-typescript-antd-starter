@@ -55,6 +55,11 @@ export const { increment, decrement, incrementByAmount } = pokemonSlice.actions;
 
 export const selectPokemons = (
 	state: RootState,
-): Array<{ name: string; url: string }> => state.pokemons.value.results;
+): Array<{ name: string; url: string; id: number }> =>
+	state.pokemons.value.results?.map((res, idx) => {
+		return { ...res, id: idx + 1 };
+	});
+
+export const selectStatus = (state: RootState): string => state.pokemons.status;
 
 export default pokemonSlice.reducer;
