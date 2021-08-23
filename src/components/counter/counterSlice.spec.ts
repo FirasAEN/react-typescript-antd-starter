@@ -1,12 +1,12 @@
 import counterReducer, {
-	CounterState,
+	ICounterState,
 	decrement,
 	increment,
 	incrementByAmount,
 } from './counterSlice';
 
 describe('counter reducer', () => {
-	const initialState: CounterState = {
+	const initialState: ICounterState = {
 		value: 3,
 		status: 'idle',
 	};

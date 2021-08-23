@@ -3,12 +3,12 @@ import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AppThunk, RootState } from '../../app/store/store';
 import { fetchCount } from './counterAPI';
 
-export interface CounterState {
+export interface ICounterState {
 	value: number;
 	status: 'idle' | 'loading' | 'failed';
 }
 
-const initialState: CounterState = {
+const initialState: ICounterState = {
 	value: 0,
 	status: 'idle',
 };
