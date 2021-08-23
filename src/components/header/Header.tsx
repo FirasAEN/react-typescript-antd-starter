@@ -15,13 +15,13 @@ import styles from './Header.module.scss';
 export const Header = (): JSX.Element => {
 	function renderIconFragment(path: AppPath): JSX.Element {
 		switch (path) {
-			case AppPath.About:
+			case AppPath.ABOUT:
 				return <RadarChartOutlined />;
-			case AppPath.Users:
+			case AppPath.USERS:
 				return <UserOutlined />;
-			case AppPath.Counter:
+			case AppPath.COUNTER:
 				return <CalculatorOutlined />;
-			case AppPath.Home:
+			case AppPath.HOME:
 				return <HomeOutlined />;
 			default:
 				return <SettingFilled />;

@@ -6,12 +6,13 @@ import Error from './pages/Error';
 import Users from './pages/Users';
 import Home from './pages/home/Home';
 
+// eslint-disable-next-line no-shadow
 export enum AppPath {
-	Home = '/home',
-	About = '/about',
-	Users = '/users',
-	Counter = '/counter',
-	Error = '/error',
+	HOME = '/home',
+	ABOUT = '/about',
+	USERS = '/users',
+	COUNTER = '/counter',
+	ERROR = '/error',
 }
 
 export interface IRoute {
@@ -25,31 +26,31 @@ export interface IRoute {
 export const AppRoutes: Array<IRoute> = [
 	{
 		id: 'home-page',
-		path: AppPath.Home,
+		path: AppPath.HOME,
 		component: Home,
 		name: 'Home',
 	},
 	{
 		id: 'about-page',
-		path: AppPath.About,
+		path: AppPath.ABOUT,
 		component: About,
 		name: 'About',
 	},
 	{
 		id: 'users-page',
-		path: AppPath.Users,
+		path: AppPath.USERS,
 		component: Users,
 		name: 'Users',
 	},
 	{
 		id: 'counter-page',
-		path: AppPath.Counter,
+		path: AppPath.COUNTER,
 		component: Counter,
 		name: 'Counter',
 	},
 	{
 		id: 'error-page',
-		path: AppPath.Error,
+		path: AppPath.ERROR,
 		component: Error,
 		name: 'Error',
 	},

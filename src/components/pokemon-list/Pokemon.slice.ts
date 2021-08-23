@@ -1,15 +1,15 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import { IPokeRequester } from '../../../requesters/poke-requester.hook';
-import { RootState } from '../../store/store';
+import { RootState } from '../../app/store/store';
+import { IPokeRequester } from '../../requesters/poke-requester.hook';
 
-export interface PokemonState {
+export interface IPokemonState {
 	value: IPokeRequester;
 	status: 'idle' | 'loading' | 'failed';
 }
 
-const initialState: PokemonState = {
+const initialState: IPokemonState = {
 	value: {} as IPokeRequester,
 	status: 'idle',
 };
