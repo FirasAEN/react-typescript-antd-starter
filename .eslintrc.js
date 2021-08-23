@@ -7,12 +7,8 @@ module.exports = {
 		jest: true,
 	},
 	extends: [
-		'eslint:recommended',
 		'prettier',
 		'plugin:react/recommended',
-		'plugin:@typescript-eslint/eslint-recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:@typescript-eslint/recommended-requiring-type-checking',
 		'plugin:react-hooks/recommended',
 		'plugin:import/errors',
 		'plugin:import/warnings',
@@ -28,40 +24,218 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'import'],
-	ignorePatterns: [
-		'.eslintrc.js'
-	],
+	ignorePatterns: ['.eslintrc.js'],
 	rules: {
 		'prettier/prettier': 'error',
-		'semi': ['error', 'always'],
+		semi: ['error', 'always'],
 		'no-var': 'error',
-		'quotes': ['error', 'single', { avoidEscape: true }],
-		'jsx-quotes': ['error', 'prefer-double'],
-		'react/display-name': 'off',
-		'react/prop-types': 'off',
-		'no-empty-function': ['error', { allow: ['arrowFunctions', 'constructors'] }],
-		'eqeqeq': ['error', 'always'],
+		quotes: ['error', 'single', { avoidEscape: true }],
+		'no-empty-function': [
+			'error',
+			{ allow: ['arrowFunctions', 'constructors'] },
+		],
+		eqeqeq: ['error', 'always'],
 		'dot-location': ['error', 'property'],
 		'require-await': 'error',
 		'no-empty': 'error',
 		'no-eq-null': 'error',
 		'no-implicit-coercion': 'error',
-		'yoda': 'error',
-		'init-declarations': ['error', 'never', { 'ignoreForLoopInit': true }],
-		'no-use-before-define': ['off', { 'functions': false, 'classes': true, 'variables': false }],
+		yoda: 'error',
+		'init-declarations': ['error', 'never', { ignoreForLoopInit: true }],
+		'no-use-before-define': [
+			'off',
+			{ functions: false, classes: true, variables: false },
+		],
 		'comma-dangle': ['error', 'only-multiline'],
-		'key-spacing': ['error', { 'beforeColon': false , 'afterColon': true }],
+		'key-spacing': ['error', { beforeColon: false, afterColon: true }],
 		'max-classes-per-file': ['error', 1],
-		'max-len': ['error', { 'code': 80, 'tabWidth': 2 }],
+		'default-case': 'error',
+		'eol-last': 'off',
 		'no-multiple-empty-lines': 'error',
+		'linebreak-style': 'off',
+		'max-len': 'off',
+		'new-parens': 'off',
+		'no-bitwise': 'error',
+		'no-caller': 'error',
+		'no-cond-assign': 'error',
+		'no-console': 'error',
+		'no-debugger': 'error',
+		'no-duplicate-case': 'error',
+		'no-duplicate-imports': 'error',
+		'no-eval': 'error',
+		'no-extra-bind': 'error',
+		'no-extra-semi': 'off',
+		'no-fallthrough': 'off',
+		'no-irregular-whitespace': 'off',
+		'no-new-func': 'error',
+		'no-new-wrappers': 'error',
+		'no-redeclare': 'error',
+		'no-return-await': 'off',
+		'no-sequences': 'error',
+		'no-shadow': [
+			'error',
+			{
+				hoist: 'all',
+			},
+		],
+		'no-sparse-arrays': 'error',
+		'no-template-curly-in-string': 'error',
+		'no-throw-literal': 'error',
+		'no-trailing-spaces': 'off',
+		'no-undef-init': 'error',
+		'no-underscore-dangle': 'error',
+		'no-unsafe-finally': 'error',
+		'no-unused-labels': 'error',
+		'object-shorthand': 'error',
+		'one-var': ['error', 'never'],
+		'prefer-arrow/prefer-arrow-functions': 'off',
+		'prefer-const': 'error',
+		'prefer-object-spread': 'error',
+		'prefer-template': 'error',
+		'space-before-function-paren': 'off',
+		'space-in-parens': ['off', 'never'],
+		'spaced-comment': [
+			'error',
+			'always',
+			{
+				markers: ['/'],
+			},
+		],
+		'use-isnan': 'error',
+		'valid-typeof': 'off',
 		'object-curly-spacing': ['error', 'always'],
-		'newline-per-chained-call': ["error", { "ignoreChainWithDepth": 2 }],
+		'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
+
+		"@typescript-eslint/no-shadow": ["error"],
 		'@typescript-eslint/no-empty-function': 'off',
 		'@typescript-eslint/no-floating-promises': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/array-type': [
+			'error',
+			{
+				default: 'generic',
+			},
+		],
+		'@typescript-eslint/adjacent-overload-signatures': 'error',
+		'@typescript-eslint/await-thenable': 'error',
+		'@typescript-eslint/ban-types': [
+			'error',
+			{
+				types: {
+					Object: {
+						message: 'Avoid using the `Object` type. Did you mean `object`?',
+					},
+					Function: {
+						message:
+							'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
+					},
+					Boolean: {
+						message: 'Avoid using the `Boolean` type. Did you mean `boolean`?',
+					},
+					Number: {
+						message: 'Avoid using the `Number` type. Did you mean `number`?',
+					},
+					String: {
+						message: 'Avoid using the `String` type. Did you mean `string`?',
+					},
+					Symbol: {
+						message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
+					},
+				},
+			},
+		],
+		'@typescript-eslint/class-name-casing': 'off',
+		'@typescript-eslint/consistent-type-assertions': 'off',
+		'@typescript-eslint/consistent-type-definitions': 'error',
+		'@typescript-eslint/dot-notation': 'error',
+		'@typescript-eslint/explicit-member-accessibility': [
+			'error',
+			{
+				accessibility: 'explicit',
+				overrides: {
+					constructors: 'explicit',
+				},
+			},
+		],
+		'@typescript-eslint/indent': 'off',
+		'@typescript-eslint/naming-convention': [
+			'error',
+			{
+				selector: 'interface',
+				format: ['PascalCase'],
+				custom: {
+					regex: '^I[A-Z]',
+					match: true,
+				},
+			},
+		],
+		'@typescript-eslint/member-delimiter-style': [
+			'off',
+			{
+				multiline: {
+					delimiter: 'none',
+					requireLast: true,
+				},
+				singleline: {
+					delimiter: 'semi',
+					requireLast: false,
+				},
+			},
+		],
+		'@typescript-eslint/member-ordering': [
+			'error',
+			{
+				default: [
+					'static-field',
+					'static-method',
+
+					'instance-field',
+					'abstract-field',
+
+					'constructor',
+
+					'instance-method',
+					'abstract-method',
+				],
+			},
+		],
+		'@typescript-eslint/no-empty-interface': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/no-misused-new': 'error',
+		'@typescript-eslint/no-namespace': 'error',
+		'@typescript-eslint/no-non-null-assertion': 'error',
+		'@typescript-eslint/no-parameter-properties': 'off',
+		'@typescript-eslint/no-require-imports': 'error',
+		'@typescript-eslint/no-this-alias': 'error',
+		'@typescript-eslint/no-unused-expressions': 'error',
+		'@typescript-eslint/no-use-before-define': 'off',
+		'@typescript-eslint/no-var-requires': 'error',
+		'@typescript-eslint/prefer-for-of': 'error',
+		'@typescript-eslint/prefer-function-type': 'error',
+		'@typescript-eslint/prefer-namespace-keyword': 'error',
+		'@typescript-eslint/quotes': [
+			'error',
+			'single',
+			{ allowTemplateLiterals: true },
+		],
+		'@typescript-eslint/semi': ['off', null],
+		'@typescript-eslint/triple-slash-reference': [
+			'error',
+			{
+				path: 'always',
+				types: 'prefer-import',
+				lib: 'always',
+			},
+		],
+		'@typescript-eslint/type-annotation-spacing': 'off',
+		'@typescript-eslint/unified-signatures': 'error',
+
+		'jsx-quotes': ['error', 'prefer-double'],
+		'react/display-name': 'off',
+		'react/prop-types': 'off',
 		'react/jsx-uses-react': 'off',
 		'react/react-in-jsx-scope': 'off',
-		'react/jsx-key': ['error', { 'checkFragmentShorthand': true }],
+		'react/jsx-key': ['error', { checkFragmentShorthand: true }],
 		'react/jsx-fragments': ['warn', 'syntax'],
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',
@@ -70,16 +244,23 @@ module.exports = {
 		'import/namespace': 'warn',
 		'import/no-named-as-default': 'off',
 		'import/export': 'warn',
+		'import/first': 'error',
 		'import/order': [
 			'error',
 			{
-				'groups': ['builtin', 'external', ['sibling', 'parent'], 'index', 'object'],
+				groups: [
+					'builtin',
+					'external',
+					['sibling', 'parent'],
+					'index',
+					'object',
+				],
 				'newlines-between': 'always',
-				'alphabetize': {
-					'order': 'asc',
-					'caseInsensitive': false
-				}
-			}
-		]
+				alphabetize: {
+					order: 'asc',
+					caseInsensitive: false,
+				},
+			},
+		],
 	},
 };
