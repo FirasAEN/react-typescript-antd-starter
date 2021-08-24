@@ -1,8 +1,8 @@
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 
+import { getPokemonsAsync } from '../../../components/pokemon-list';
 import PokemonList from '../../../components/pokemon-list/Pokemon-List';
-import { getPokemonsAsync } from '../../../components/pokemon-list/Pokemon.slice';
 import { useAppDispatch } from '../../store/hooks';
 import styles from './Home.module.scss';
 

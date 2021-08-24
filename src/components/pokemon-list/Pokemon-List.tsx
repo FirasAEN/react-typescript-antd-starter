@@ -1,14 +1,12 @@
 import { Avatar, Empty, List } from 'antd';
 
-import { useAppSelector } from '../../app/store/hooks';
 import styles from './Pokemon-List.module.scss';
-import { selectPokemons, selectStatus } from './Pokemon.slice';
+import { usePokemonSelector } from './pokemon.selector';
 
 const PokemonList = (): JSX.Element => {
 	const imageBase =
 		'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
-	const pokemons = useAppSelector(selectPokemons);
-	const isLoading = useAppSelector(selectStatus) === 'loading';
+	const { pokemons, isLoading } = usePokemonSelector();
 
 	return (
 		<div className={styles.pokemon_container}>
